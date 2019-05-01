@@ -1,0 +1,25 @@
+{
+    "timeZone": "America/New_York",
+    "dependencies": {
+    },
+    "exceptionLogging": "STACKDRIVER",
+    "oauthScopes": ["https://www.googleapis.com/auth/gmail.addons.execute", "https://www.googleapis.com/auth/gmail.addons.current.message.readonly", "https://www.googleapis.com/auth/script.external_request"],
+    "urlFetchWhitelist": ["https://app.clio.com/", "https://iliadconnect.com/"],
+    "gmail": {
+      "name": "Iliad Connect",
+      "logoUrl": "https://iliadconnect.com/static/iliad.png",
+      "contextualTriggers": [{
+        "unconditional": {
+        },
+        "onTriggerFunction": "buildAddOn"
+      }],
+      "universalActions": [{
+        "text": "Preferences",
+        "runFunction": "buildPreferencesCard"
+      }],
+      "primaryColor": "#fea403",
+      "secondaryColor": "#fea403",
+      "authorizationCheckFunction": "getClioAuth",
+      "openLinkUrlPrefixes": ["https://mail.google.com/", "https://app.clio.com/oauth/"]
+    }
+  }
